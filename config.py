@@ -18,3 +18,5 @@ FPS = 60
 
 # title
 TITLE ='pygame template'
+
+
