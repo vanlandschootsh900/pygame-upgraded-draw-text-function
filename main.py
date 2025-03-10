@@ -24,21 +24,40 @@ def handle_events ():
                 return False
     return True
 
+# def welcome_text(screen, text, font, size, text_color, x,y, bold=True):
+#     welcome = font.render(text, True, text_color, size)
+#     screen.blit(welcome, (x,y), bold)
+
+# def draw_text(screen, text, font, size, text_color, x,y, bold= True):
+#     img = font.(text, True, size, text_color, bold)
+#     screen.blit(img, (x,y))
+
+
 def main():
     
     screen = init_game()
     clock = pygame.time.Clock()
+    
+    red= config.RED
+    purple= config.PURPLE
+    black= config.BLACK
+    green= config.GREEN
 
-
+    size_normale= 40
+    size_big= 60
+    small_size=30
+    dot_font = 'Doto-VariableFont_ROND,wght.ttf'
+    
+    
     
     running = True
     while running:
         running = handle_events()
-        screen.fill(config.GRAY) # Use color from config
+        screen.fill(config.WHITE) # Use color from config
         
         # Add code to draw stuff (for example) below this comment
 
-
+        
 
 
 
