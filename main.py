@@ -29,8 +29,8 @@ def handle_events ():
 #     welcome = font.render(text, True, text_color, size)
 #     screen.blit(welcome, (x,y), bold)
 
-def draw_text(screen, text, font, size, text_color, x,y, bold= True):
-    img = font.render(text, True, size, text_color, bold)
+def draw_text(screen, text, font, text_color, x,y, bold= True):
+    img = font.render(text, True, text_color)
     screen.blit(img, (x,y))
 
 
@@ -39,7 +39,7 @@ def main():
     
     screen = init_game()
     clock = pygame.time.Clock()
-    pygame.font.SysFont()
+    
 
     red= config.RED
     purple= config.PURPLE
@@ -49,7 +49,7 @@ def main():
     size_normale= 40
     size_big= 60
     small_size=30
-    dot_font = 'VariableFont_ROND.ttf'
+    free = 'freemono.ttf'
     
     
     
@@ -64,7 +64,7 @@ def main():
         
 
 
-        draw_text(screen, 'hello',dot_font,40, config.PURPLE,400,440)
+        draw_text(screen, 'hello',free,40, config.PURPLE,400,440)
 
 
 
