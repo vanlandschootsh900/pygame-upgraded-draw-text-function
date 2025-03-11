@@ -5,7 +5,7 @@
 import pygame
 import sys
 import config # Import the config module
-
+import random
 
 def init_game ():
 
@@ -25,34 +25,35 @@ def handle_events ():
                 return False
     return True
 
-# def welcome_text(screen, text, font, size, text_color, x,y, bold=True):
-#     welcome = font.render(text, True, text_color, size)
-#     screen.blit(welcome, (x,y), bold)
-
-def draw_text(screen, text, font, text_color, x,y, bold= True):
-    img = font.render(text, True, text_color)
-    screen.blit(img, (x,y))
-
-
+def draw_text(screen, text, font, font_color, position, anti_aliased=True, italic=False, bold=False):
+    img = font.render(text, True, font_color)
+    screen.blit(img, position,)
 
 def main():
     
     screen = init_game()
     clock = pygame.time.Clock()
     
+    
+    x1 =random.randrange(1,600)
+    x2 =random.randrange(1,600)
+    x3 =random.randrange(1,600)
+    x4 =random.randrange(1,600)
+    x5 =random.randrange(1,600)
 
-    red= config.RED
-    purple= config.PURPLE
-    black= config.BLACK
-    green= config.GREEN
+    y1 =random.randrange(1,400)
+    y2 = random.randrange(1,400)
+    y3 =random.randrange(1,400)
+    y4 =random.randrange(1,400)
+    y5 =random.randrange(1,400)
 
-    size_normale= 40
-    size_big= 60
-    small_size=30
-    free = 'freemono.ttf'
-    
-    
-    
+    size1= int(random.randrange(10,100))
+    size2= int(random.randrange(10,100))
+    size3= int(random.randrange(10,100))
+
+    free = pygame.font.SysFont('airal',size1)
+    dot = pygame.font.Font('Doto-VariableFont_ROND,wght.ttf',size2)
+    lib = pygame.font.Font('LiberationMono-Italic.ttf',size3)
     
     running = True
     while running:
@@ -64,8 +65,11 @@ def main():
         
 
 
-        draw_text(screen, 'hello',free,40, config.PURPLE,400,440)
-
+        draw_text(screen, 'hello',free, config.RED,(x1,y1))
+        draw_text(screen, 'welcome to the game',dot, config.BLACK,(x2,y2))
+        draw_text(screen, 'random thing',free, config.PURPLE,(x3,y3))
+        draw_text(screen, 'you lossed',dot, config.BLUE,(x4,y4))
+        draw_text(screen, 'you win',lib, config.GREEN,(x5,y5))
 
 
 
